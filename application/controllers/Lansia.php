@@ -11,7 +11,7 @@ class Lansia extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Data Lansia | Posyandu EH Indah';
+        $data['title'] = 'Data Lansia | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $data['lansia'] = $this->lansia_model->getDataLansia();
@@ -83,7 +83,7 @@ class Lansia extends CI_Controller
     // SELESAI DELETE DATA IBU
 
     public function pemeriksaanlansia(){
-        $data['title'] = 'Pemeriksaan Lansia | Posyandu EH Indah';
+        $data['title'] = 'Pemeriksaan Lansia | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $data['lansia'] = $this->lansia_model->getDataLansia();

@@ -6,7 +6,7 @@ class User extends CI_Controller
     // MULAI PROFILE USER PETUGAS
     public function profile()
     {
-        $data['title'] = 'Profile | Posyandu EH Indah';
+        $data['title'] = 'Profile | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $this->form_validation->set_rules('name', 'Nama Lengkap', 'required|trim');
@@ -91,7 +91,7 @@ class User extends CI_Controller
     // MULAI PROFILE USER BIDAN
     public function profile_bidan()
     {
-        $data['title'] = 'Profile | Posyandu EH Indah';
+        $data['title'] = 'Profile | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $this->form_validation->set_rules('name', 'Nama Lengkap', 'required|trim');

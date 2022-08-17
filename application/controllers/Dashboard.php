@@ -13,7 +13,7 @@ class Dashboard extends CI_Controller
     // MULAI MENAMPILKAN DASHBOARD PETUGAS
     public function petugas()
     {
-        $data['title'] = 'Dashboard | Posyandu EH Indah';
+        $data['title'] = 'Dashboard | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $users = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         // print_r($data);
@@ -40,7 +40,7 @@ class Dashboard extends CI_Controller
     // MULAI MENAMPILKAN DASHBOARD BIDAN
     public function bidan()
     {
-        $data['title'] = 'Dashboard | Posyandu EH Indah';
+        $data['title'] = 'Dashboard | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $users = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         // print_r($data);

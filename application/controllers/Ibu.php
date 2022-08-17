@@ -11,7 +11,7 @@ class Ibu extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Data Ibu Hamil | Posyandu EH Indah';
+        $data['title'] = 'Data Ibu Hamil | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $data['ibu'] = $this->Ibu_model->getDataIbu();
@@ -91,7 +91,7 @@ class Ibu extends CI_Controller
 
     // Layanan
     public function pemeriksaanibuhamil(){
-        $data['title'] = 'Pemeriksaan Ibu Hamil | Posyandu EH Indah';
+        $data['title'] = 'Pemeriksaan Ibu Hamil | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $data['ibu'] = $this->Ibu_model->getDataIbu();

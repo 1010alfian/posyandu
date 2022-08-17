@@ -11,7 +11,7 @@ class Login extends CI_Controller
 	// MULAI LOGIN
 	public function index()
 	{
-		$data['title'] = 'Posyandu';
+		$data['title'] = 'Posyandu Kencana';
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		if ($this->form_validation->run() == false) {
 			$this->load->view('login/login', $data);

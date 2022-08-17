@@ -13,7 +13,7 @@ class Penimbangan_Anak extends CI_Controller
     // MULAI MENAMPILKAN
     public function index()
     {
-        $data['title'] = 'Penimbangan Anak | Posyandu EH Indah';
+        $data['title'] = 'Penimbangan Anak | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['d_anak'] = $this->Penimbangan_model->getDataAnakIbu();
 
@@ -30,7 +30,7 @@ class Penimbangan_Anak extends CI_Controller
     // MULAI TAMBAH DATA
     public function submit()
     {
-        $data['title'] = 'Penimbangan Anak | Posyandu EH Indah';
+        $data['title'] = 'Penimbangan Anak | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $user = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();

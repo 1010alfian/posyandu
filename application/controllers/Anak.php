@@ -13,7 +13,7 @@ class Anak extends CI_Controller
     // MULAI INDEX DATA ANAK
     public function index()
     {
-        $data['title'] = 'Data Balita | Posyandu';
+        $data['title'] = 'Data Balita | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $data['balita'] = $this->Anak_model->getDataAnak();

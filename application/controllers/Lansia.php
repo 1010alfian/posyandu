@@ -95,24 +95,21 @@ class Lansia extends CI_Controller
         $this->load->view('templates/footer-datatables');
     }
 
-     public function update()
+     public function addlayanan()
     {
         $data = [
-            'nama' => $this->input->post('nama'),
-            'usia' => $this->input->post('usia'),
+            'id_lansia' => $this->input->post('id_lansia'),
+            'tgl_pemeriksaan' => $this->input->post('tgl_pemeriksaan'),
+            'gol_darah' => $this->input->post('gol_darah'),
             'bb' => $this->input->post('bb'),
-            'tensi' => $this->input->post('tensi'), 
+            'tensi' => $this->input->post('tensi'),
+            'bingkisan' => $this->input->post('bingkisan'),
 
         ];
-        $where = [
-            'id_lansia' => $this->input->post('id_lansia')
-        ];
-        
-        $this->db->where($where);
-        $this->db->update('lansia', $data);
+        $this->db->insert('layanan_lansia', $data);
         
         $this->session->set_flashdata('msg', 'Berhasil Diubah');
 
-        redirect('lansia/index');
+        redirect('lansia/pemeriksaanlansia');
     }
 }

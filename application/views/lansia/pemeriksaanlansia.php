@@ -1,7 +1,7 @@
 <div class="right_col" role="main">
     <div class="page-title">
         <div class="title_left">
-            <h3>Imunisasi Anak</h3>
+            <h3>Layanan Lansia</h3>
         </div>
     </div>
     <div class="flash-datar" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>
@@ -14,7 +14,7 @@
             <div class="x_panel">
                 <div class="x_content">
                     <br />
-                    <form id="imunisasi-form" name="imunisasi-form" class="form-horizontal form-label-left" action="<?php echo base_url('lansia/update'); ?>" method="POST" enctype="multipart/form-data">
+                    <form id="imunisasi-form" name="imunisasi-form" class="form-horizontal form-label-left" action="<?php echo base_url('lansia/addlayanan'); ?>" method="POST" enctype="multipart/form-data">
                         <div class="form-group row">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="username">Nama
                             </label>
@@ -55,6 +55,51 @@
                             </div>
                         </div>
 
+                        <div class="divider-dashed"></div>
+                        <h2>Pertumbuhan</h2>
+                        <div class="divider-dashed"></div>
+
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="tgl_pemeriksaan">Tanggal Pemeriksaan
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <input type=date step=any id="tgl_pemeriksaan" name="tgl_pemeriksaan" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="gol_darah">Golongan Darah
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <input type=text step=any id="gol_darah" name="gol_darah" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="bb">Berat Badan
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <input type=number step=any id="bb" name="bb" class="form-control">
+                            </div>
+                            <label for="">Kg</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="tensi">Tensi
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <input type=number step=any id="tensi" name="tensi" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="bingkisan">Bingkisan
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <select name="bingkisan" class="form-control" id="">
+                                    <option selected>Pilih Bingkisan</option>
+                                    <option value="1">Vitamin</option>
+                                    <option value="2">Paket Makanan Sehat</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="ln_solid"></div>
                         <div class="form-group row">
                             <div class="col-md-6 col-sm-6 offset-md-3">
@@ -78,9 +123,8 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama</th>
-                                                <th>Usia</th>
-                                                <th>Berat Badan</th>
-                                                <th>Tensi</th>
+                                                <th>Tempat dan Tanggal Lahir</th>
+                                                <th>Alamat</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -88,11 +132,10 @@
                                             <?php foreach ($lansia as $d) : ?>
                                                 <tr>
                                                     <td><?= $d['nama']; ?></td>
-                                                    <td><?= $d['usia']; ?></td>
-                                                    <td><?= $d['bb']; ?></td>
-                                                    <td><?= $d['tensi']; ?></td>
+                                                    <td><?= $d['tempat_lahir']; ?>, <?= $d['tgl_lahir']; ?></td>
+                                                    <td><?= $d['alamat']; ?></td>
                                                     <td>
-                                                        <button id="pilihLansia" type="button" data-id="<?= $d['id_lansia']; ?>" data-nama="<?= $d['nama']; ?>" data-usia="<?= $d['usia']; ?>" data-bb="<?= $d['bb']; ?>" data-tensi="<?= $d['tensi']; ?>" class="btnSelectLansia btn btn-primary btn-sm">Pilih</button>
+                                                        <button id="pilihLansia" type="button" data-id="<?= $d['id_lansia']; ?>" data-nama="<?= $d['nama']; ?>" data-usia="<?= $d['tempat_lahir']; ?>" data-bb="<?= $d['tgl_lahir']; ?>" data-tensi="<?= $d['alamat']; ?>" class="btnSelectLansia btn btn-primary btn-sm">Pilih</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>

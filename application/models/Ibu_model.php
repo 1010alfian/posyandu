@@ -7,7 +7,7 @@ class Ibu_model extends CI_Model {
     public function getDataIbu(){
         $this->db->select();
         $this->db->from('ibu as a');
-        $this->db->join('tensi_ibu as b', 'a.id_ibu = b.ibu_id', 'left');        
+        $this->db->join('layanan_ibu_hamil as b', 'a.id_ibu = b.ibu_id', 'left');        
         $query = $this->db->get();
         
         return $query->result_array();

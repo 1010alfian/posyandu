@@ -26,8 +26,8 @@
                                             <th>No</th>
                                             <th>Nama Ibu</th>
                                             <th>Tempat/Tgl Lahir</th>
-                                            <th>Gol Dar</th>
                                             <th>Nama Suami</th>
+                                            <th>HPHT</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -41,8 +41,8 @@
                                                 </th>
                                                 <td><?= $b['nama_ibu']; ?></td>
                                                 <td><?= $b['tempat_lahir'] . ',' . $b['tgl_lahir']; ?></td>
-                                                <td><?= $b['gol_dar']; ?></td>
                                                 <td><?= $b['nama_suami']; ?></td>
+                                                <td><?= date("d-M-Y", strtotime($b['hpht'])) ?></td>
                                                 <td>
                                                     <!-- <a data-toggle="modal" data-target="#viewDataIbuModal<?= $b['id_ibu']; ?>" href="<?= base_url(); ?>ibu/viewDataIbu/<?= $b['id_ibu']; ?>" class="btn btn-info btn-circle btn-sm" title="Details">
                                                         <i class="fa fa-sticky-note"></i>
@@ -109,39 +109,9 @@
                                     </div>
                                 </div>
                                 <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="gol-dar">Golongan Darah</label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="gol-dar" name="gol-dar" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="pendidikan-ibu">Pendidikan Ibu</label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="pendidikan-ibu" name="pendidikan-ibu" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="pekerjaan-ibu">Pekerjaan Ibu</label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="pekerjaan-ibu" name="pekerjaan-ibu" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="alamat">Alamat</label>
                                     <div class="col-md-9">
                                         <input type="text" id="alamat" name="alamat" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="kota">Kota</label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="kota" name="kota" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="kecamatan">Kecamatan</label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="kecamatan" name="kecamatan" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -153,42 +123,15 @@
                                     </div>
                                 </div>
                                 <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="tempat-lhr-suami">Tmpt Lahir Suami</label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="tempat-lhr-suami" name="tempat-lhr-suami" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align">Tgl Lahir Suami
-                                    </label>
-                                    <div class="col-md-9">
-                                        <input id="tgl-lahir-ibu" name="tgl-lahir-suami" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
-                                        <script>
-                                            function timeFunctionLong(input) {
-                                                setTimeout(function() {
-                                                    input.type = 'text';
-                                                }, 60000);
-                                            }
-                                        </script>
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="pendidikan-suami">Pendidikan Suami</label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="pendidikan-suami" name="pendidikan-suami" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="pekerjaan-suami">Pekerjaan Suami</label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="pekerjaan-suami" name="pekerjaan-suami" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="no-tlp">No Telepon</label>
                                     <div class="col-md-9">
                                         <input type="text" id="no-tlp" name="no-tlp" class="form-control" data-inputmask="'mask' : '9999-9999-9999'">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="hpht">HPHT</label>
+                                    <div class="col-md-9">
+                                        <input type="date" id="hpht" name="hpht" required="required" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -250,39 +193,9 @@
                                         </div>
                                     </div>
                                     <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="gol-dar">Golongan Darah</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="gol-dar" name="gol-dar" class="form-control" value="<?= $row['gol_dar'] ?>">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="pendidikan-ibu">Pendidikan Ibu</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="pendidikan-ibu" name="pendidikan-ibu" class="form-control" value="<?= $row['pendidikan'] ?>">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="pekerjaan-ibu">Pekerjaan Ibu</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="pekerjaan-ibu" name="pekerjaan-ibu" class="form-control" value="<?= $row['pekerjaan'] ?>">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="alamat">Alamat</label>
                                         <div class="col-md-9">
                                             <input type="text" id="alamat" name="alamat" class="form-control" value="<?= $row['alamat'] ?>">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="kota">Kota</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="kota" name="kota" class="form-control" value="<?= $row['kota'] ?>">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="kecamatan">Kecamatan</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="kecamatan" name="kecamatan" class="form-control" value="<?= $row['kecamatan'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -293,43 +206,18 @@
                                             <input type="text" id="nama-suami" name="nama-suami" required="required" class="form-control" value="<?= $row['nama_suami'] ?>">
                                         </div>
                                     </div>
-                                    <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="tempat-lhr-suami">Tmpt Lahir Suami</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="tempat-lhr-suami" name="tempat-lhr-suami" class="form-control" value="<?= $row['tempat_lahir_suami'] ?>">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align">Tgl Lahir Suami
-                                        </label>
-                                        <div class="col-md-9">
-                                            <input id="tgl-lahir-suami" name="tgl-lahir-suami" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)" value="<?= $row['tgl_lahir_suami'] ?>">
-                                            <script>
-                                                function timeFunctionLong(input) {
-                                                    setTimeout(function() {
-                                                        input.type = 'text';
-                                                    }, 60000);
-                                                }
-                                            </script>
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="pendidikan-suami">Pendidikan Suami</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="pendidikan-suami" name="pendidikan-suami" class="form-control" value="<?= $row['pendidikan_suami'] ?>">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="pekerjaan-suami">Pekerjaan Suami</label>
-                                        <div class="col-md-9">
-                                            <input type="text" id="pekerjaan-suami" name="pekerjaan-suami" class="form-control" value="<?= $row['pekerjaan_suami'] ?>">
-                                        </div>
-                                    </div>
 
                                     <div class="item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="no-tlp">No Telepon</label>
                                         <div class="col-md-9">
                                             <input type="text" id="no-tlp" name="no-tlp" class="form-control" data-inputmask="'mask' : '9999-9999-9999'" value="<?= $row['no_tlp'] ?>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="hpht">HPHT</label>
+                                        <div class="col-md-9">
+                                            <input type="date" id="hpht" name="hpht" class="form-control" value="<?= $row['hpht'] ?>">
                                         </div>
                                     </div>
                                 </div>

@@ -30,18 +30,10 @@ class Ibu extends CI_Controller
             'nama_ibu' => $this->input->post('nama-ibu'),
             'tempat_lahir' => $this->input->post('tempat-lhr-ibu'),
             'tgl_lahir' => $this->input->post('tgl-lahir-ibu'),
-            'gol_dar' => $this->input->post('gol-dar'),
-            'pendidikan' => $this->input->post('pendidikan-ibu'),
-            'pekerjaan' => $this->input->post('pekerjaan-ibu'),
             'nama_suami' => $this->input->post('nama-suami'),
-            'tempat_lahir_suami' => $this->input->post('tempat-lhr-suami'),
-            'tgl_lahir_suami' => $this->input->post('tgl-lahir-suami'),
-            'pendidikan_suami' => $this->input->post('pendidikan-suami'),
-            'pekerjaan_suami' => $this->input->post('pekerjaan-suami'),
             'alamat' => $this->input->post('alamat'),
-            'kecamatan' => $this->input->post('kecamatan'),
-            'kota' => $this->input->post('kota'),
             'no_tlp' => $this->input->post('no-tlp'),
+            'hpht' => $this->input->post('hpht'),
         ];
 
         $this->db->insert('ibu', $data);
@@ -72,18 +64,10 @@ class Ibu extends CI_Controller
             'nama_ibu' => $this->input->post('nama-ibu'),
             'tempat_lahir' => $this->input->post('tempat-lhr-ibu'),
             'tgl_lahir' => $this->input->post('tgl-lahir-ibu'),
-            'gol_dar' => $this->input->post('gol-dar'),
-            'pendidikan' => $this->input->post('pendidikan-ibu'),
-            'pekerjaan' => $this->input->post('pekerjaan-ibu'),
             'nama_suami' => $this->input->post('nama-suami'),
-            'tempat_lahir_suami' => $this->input->post('tempat-lhr-suami'),
-            'tgl_lahir_suami' => $this->input->post('tgl-lahir-suami'),
-            'pendidikan_suami' => $this->input->post('pendidikan-suami'),
-            'pekerjaan_suami' => $this->input->post('pekerjaan-suami'),
             'alamat' => $this->input->post('alamat'),
-            'kecamatan' => $this->input->post('kecamatan'),
-            'kota' => $this->input->post('kota'),
             'no_tlp' => $this->input->post('no-tlp'),
+            'hpht' => $this->input->post('hpht'),
 
         ];
 
@@ -104,6 +88,8 @@ class Ibu extends CI_Controller
     }
     // SELESAI DELETE DATA IBU
 
+
+    // Layanan
     public function pemeriksaanibuhamil(){
         $data['title'] = 'Pemeriksaan Ibu Hamil | Posyandu EH Indah';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
@@ -117,22 +103,30 @@ class Ibu extends CI_Controller
         $this->load->view('templates/footer-datatables');
     }
 
-    public function addtensi(){
+    public function add(){
         $data = [
             'ibu_id' => $this->input->post('ibu_id'),
-            'tensi' => $this->input->post('tensi')
+            'tgl_pemeriksaan' => $this->input->post('tgl_pemeriksaan'),
+            'usia_kandungan' => $this->input->post('usia_kandungan'),
+            'bb' => $this->input->post('bb'),
+            'tensi' => $this->input->post('tensi'),
+            'lingkar_perut' => $this->input->post('lingkar_perut')
         ];
 
-        $this->db->insert('tensi_ibu', $data);
+        $this->db->insert('layanan_ibu_hamil', $data);
         $this->session->set_flashdata('msg', 'Berhasil Ditambahkan');
 
         redirect('ibu/pemeriksaanibuhamil');
     }
 
-    public function editTensi()
+    public function edit()
     {
         $data = [
-            'tensi' => $this->input->post('tensi')
+            'tgl_pemeriksaan' => $this->input->post('tgl_pemeriksaan'),
+            'usia_kandungan' => $this->input->post('usia_kandungan'),
+            'bb' => $this->input->post('bb'),
+            'tensi' => $this->input->post('tensi'),
+            'lingkar_perut' => $this->input->post('lingkar_perut')
         ];
         $where = [
             'id_tensi_ibu' => $this->input->post('id_tensi_ibu')

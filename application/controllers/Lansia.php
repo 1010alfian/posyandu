@@ -28,9 +28,9 @@ class Lansia extends CI_Controller
     {
         $data = [
             'nama' => $this->input->post('nama'),
-            'usia' => $this->input->post('usia'),
-            'bb' => $this->input->post('bb'),
-            'tensi' => $this->input->post('tensi'),
+            'tempat_lahir' => $this->input->post('tempat_lahir'),
+            'tgl_lahir' => $this->input->post('tgl_lahir'),
+            'alamat' => $this->input->post('alamat'),
         ];
 
         $this->db->insert('lansia', $data);
@@ -59,9 +59,9 @@ class Lansia extends CI_Controller
     {
         $data = [
             'nama' => $this->input->post('nama'),
-            'usia' => $this->input->post('usia'),
-            'bb' => $this->input->post('bb'),
-            'tensi' => $this->input->post('tensi'), 
+            'tempat_lahir' => $this->input->post('tempat_lahir'),
+            'tgl_lahir' => $this->input->post('tgl_lahir'),
+            'alamat' => $this->input->post('alamat'),
 
         ];
 

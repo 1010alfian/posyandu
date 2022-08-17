@@ -21,9 +21,8 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>Usia</th>
-                                            <th>Berat Badan</th>
-                                            <th>Tensi</th>
+                                            <th>Tempat dan Tanggal Lahir</th>
+                                            <th>Alamat</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -36,9 +35,8 @@
                                                     <center><?= $i; ?></center>
                                                 </th>
                                                 <td><?= $b['nama']; ?></td>
-                                                <td><?= $b['usia']; ?></td>
-                                                <td><?= $b['bb']; ?></td>
-                                                <td><?= $b['tensi']; ?></td>
+                                                <td><?= $b['tempat_lahir']; ?>, <?= date("d-M-Y", strtotime($b['tgl_lahir'])); ?> </td>
+                                                <td><?= $b['alamat']; ?></td>
                                                 <td>
                                                     <a data-toggle="modal" data-target="#editDataLansiaModal<?= $b['id_lansia']; ?>" href="<?= base_url(); ?>lansia/updateDatalansia/<?= $b['id_lansia']; ?>" class="btn btn-warning btn-circle btn-sm" title="Edit">
                                                         <i class="fa fa-edit"></i>
@@ -82,21 +80,21 @@
                                     </div>
                                 </div>
                                 <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="usia">Usia</label>
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="tempat_lahir">Tempat Lahir</label>
                                     <div class="col-md-9">
-                                        <input type="text" id="usia" name="usia" class="form-control">
+                                        <input type="text" id="tempat_lahir" name="tempat_lahir" class="form-control">
                                     </div>
                                 </div>
                                 <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="bb">Berat Badan</label>
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="tgl_lahir">Tanggal Lahir</label>
                                     <div class="col-md-9">
-                                        <input type="text" id="bb" name="bb" class="form-control">
+                                        <input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control">
                                     </div>
                                 </div>
                                 <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="tensi">Tensi</label>
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="alamat">Alamat</label>
                                     <div class="col-md-9">
-                                        <input type="text" id="tensi" name="tensi" class="form-control">
+                                        <input type="text" id="alamat" name="alamat" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -138,21 +136,21 @@
                                         </div>
                                     </div>
                                     <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="usia">Usia</label>
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="tempat_lahir">Tempat Lahir</label>
                                         <div class="col-md-9">
-                                            <input type="text" id="usia" name="usia" value="<?= $row['usia'] ?>" class="form-control">
+                                            <input type="text" id="tempat_lahir" name="tempat_lahir" value="<?= $row['tempat_lahir'] ?>" class="form-control">
                                         </div>
                                     </div>
                                     <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="bb">Berat Badan</label>
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="tgl_lahir">Tanggal Lahir</label>
                                         <div class="col-md-9">
-                                            <input type="text" id="bb" name="bb" value="<?= $row['bb'] ?>" class="form-control">
+                                            <input type="date" id="tgl_lahir" name="tgl_lahir" value="<?= $row['tgl_lahir'] ?>" class="form-control">
                                         </div>
                                     </div>
                                     <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="tensi">Tensi</label>
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="alamat">Alamat</label>
                                         <div class="col-md-9">
-                                            <input type="text" id="tensi" name="tensi" value="<?= $row['tensi'] ?>" class="form-control">
+                                            <input type="text" id="alamat" name="alamat" value="<?= $row['alamat'] ?>" class="form-control">
                                         </div>
                                     </div>
                                 </div>

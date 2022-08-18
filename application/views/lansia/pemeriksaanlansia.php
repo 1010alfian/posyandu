@@ -4,7 +4,7 @@
             <h3>Layanan Lansia</h3>
         </div>
     </div>
-    <div class="flash-datar" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>
+    <div class="flash-dataa" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>
     <?php if ($this->session->flashdata('msg')) : ?>
 
     <?php endif; ?>
@@ -29,28 +29,19 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align">Usia</label>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">Tempat dan Tanggal Lahir</label>
                             <div class="col-md-6 col-sm-6">
                                 <div class="input-group">
-                                    <input type="text" name="usia" id="usia" class="form-control">
+                                    <input type="text" name="tgl_lahir" id="tgl_lahir" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Berat Badan
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Alamat
                             </label>
                             <div class="col-md-6 col-sm-6">
                                 <div class="input-group">
-                                    <input type="text" name="bb" id="bb" class="form-control" >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Tensi
-                            </label>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="input-group">
-                                    <input type="text" name="tensi" id="tensi" class="form-control" >
+                                    <input type="text" name="alamat" id="alamat" class="form-control" >
                                 </div>
                             </div>
                         </div>
@@ -113,7 +104,7 @@
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Daftar Data Anak</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Daftar Data Lansia</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -135,7 +126,7 @@
                                                     <td><?= $d['tempat_lahir']; ?>, <?= $d['tgl_lahir']; ?></td>
                                                     <td><?= $d['alamat']; ?></td>
                                                     <td>
-                                                        <button id="pilihLansia" type="button" data-id="<?= $d['id_lansia']; ?>" data-nama="<?= $d['nama']; ?>" data-usia="<?= $d['tempat_lahir']; ?>" data-bb="<?= $d['tgl_lahir']; ?>" data-tensi="<?= $d['alamat']; ?>" class="btnSelectLansia btn btn-primary btn-sm">Pilih</button>
+                                                        <button id="pilihLansia" type="button" data-id="<?= $d['id_lansia']; ?>" data-nama="<?= $d['nama']; ?>" data-tgl_lahir="<?= $d['tempat_lahir']; ?>, <?= $d['tgl_lahir']; ?>" data-alamat="<?= $d['alamat']; ?>" class="btnSelectLansia btn btn-primary btn-sm">Pilih</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>

@@ -59,15 +59,13 @@
 		$('.btnSelectLansia').click(function() {
 			var id = $(this).data('id');
 			var nama = $(this).data('nama');
-			var usia = $(this).data('usia');
-			var bb = $(this).data('bb');
-			var tensi = $(this).data('tensi');
+			var tgl_lahir = $(this).data('tgl_lahir');
+			var alamat = $(this).data('alamat');
 
 			$('#id_lansia').val(id);
 			$('#nama').val(nama);
-			$('#usia').val(usia);
-			$('#bb').val(bb);
-			$('#tensi').val(tensi);
+			$('#tgl_lahir').val(tgl_lahir);
+			$('#alamat').val(alamat);
 
 			$('#DataLansiaModal').modal('toggle');
 		});
@@ -163,12 +161,11 @@
 
 		//    KUMPULAN FUNCTION
 		function getLansia() {
-			$("#usia").focus();
+			$("#tgl_lahir").focus();
 
-			$("#usia").prop("disabled", false);
-			$("#bb").prop("disabled", false);
+			$("#tgl_lahir").prop("disabled", false);
 			$("#nama").prop("disabled", false);
-			$("#tensi").prop("disabled", false);
+			$("#alamat").prop("disabled", false);
 		}
 
 		function getPertumbuhan() {

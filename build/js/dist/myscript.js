@@ -5,6 +5,12 @@ if (flash) {
 	Swal.fire("Profile", flash, "success");
 }
 
+const flasha = $(".flash-dataa").data("flashdata");
+
+if (flasha) {
+	Swal.fire("Layanan Lansia", flash, "success");
+}
+
 // Pesan Data Ibu
 const flashq = $(".flash-dataq").data("flashdata");
 

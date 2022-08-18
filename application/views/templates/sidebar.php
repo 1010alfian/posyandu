@@ -30,7 +30,7 @@
                     </li>
                 </ul>
                 <ul class="nav side-menu">
-                    <li><a href="<?= base_url('petugas') ?>"><i class="fa fa-users"></i> Data Petugas</a>
+                    <li><a href="<?= base_url('petugas') ?>"><i class="fa fa-users"></i> Data Kader</a>
                     </li>
                 </ul>
                 <ul class="nav side-menu">

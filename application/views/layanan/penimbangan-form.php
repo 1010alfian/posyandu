@@ -1,7 +1,7 @@
 <div class="right_col" role="main">
     <div class="page-title">
         <div class="title_left">
-            <h3>Penimbangan Anak</h3>
+            <h3>Penimbangan Balita</h3>
         </div>
     </div>
     <div class="flash-datap" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>

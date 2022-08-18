@@ -1,7 +1,7 @@
 <div class="right_col" role="main">
     <div class="page-title">
         <div class="title_left">
-            <h3>Data Petugas</h3>
+            <h3>Data Kader</h3>
         </div>
     </div>
     <div class="flash-datae" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>
@@ -13,7 +13,7 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataPetugasModal">Tambah Data Petugas</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataPetugasModal">Tambah Data Kader</button>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">

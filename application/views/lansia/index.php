@@ -12,6 +12,10 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataLansiaModal">Tambah Data Lansia</button>
                     <div class="clearfix"></div>
                 </div>
+                <<div class="flash-datab" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>
+                <?php if ($this->session->flashdata('msg')) : ?>
+
+                <?php endif; ?>
                 <div class="x_content">
                     <div class="row">
                         <div class="col-sm-12">

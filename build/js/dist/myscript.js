@@ -5,10 +5,18 @@ if (flash) {
 	Swal.fire("Profile", flash, "success");
 }
 
+// msg layanan lansia
+const flashb = $(".flash-datab").data("flashdata");
+
+if (flashb) {
+	Swal.fire("Data Lansia", flashb, "success");
+}
+
+// msg layanan lansia
 const flasha = $(".flash-dataa").data("flashdata");
 
 if (flasha) {
-	Swal.fire("Layanan Lansia", flasha, "success");
+	Swal.fire("Data Layanan Lansia", flasha, "success");
 }
 
 // Pesan Data Ibu

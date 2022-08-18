@@ -107,9 +107,7 @@ class Lansia extends CI_Controller
 
         ];
         $this->db->insert('layanan_lansia', $data);
-        
-       $this->session->set_flashdata('msg', 'Berhasil Ditambahkan');
-
+        $this->session->set_flashdata('msg', 'Berhasil Ditambahkan');
         redirect('lansia/pemeriksaanlansia');
     }
 }

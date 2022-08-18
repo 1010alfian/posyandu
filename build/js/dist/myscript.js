@@ -8,7 +8,7 @@ if (flash) {
 const flasha = $(".flash-dataa").data("flashdata");
 
 if (flasha) {
-	Swal.fire("Layanan Lansia", flash, "success");
+	Swal.fire("Layanan Lansia", flasha, "success");
 }
 
 // Pesan Data Ibu

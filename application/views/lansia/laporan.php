@@ -1,7 +1,7 @@
 <div class="right_col" role="main">
     <div class="page-title">
         <div class="title_left">
-            <h3>Laporan Balita</h3>
+            <h3>Laporan Lansia</h3>
         </div>
     </div>
     <div class="flash-dataw" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>
@@ -26,30 +26,22 @@
                                             <th>No</th>
                                             <th>Nama</th>
                                             <th>Tanggal Periksa</th>
-                                            <th>Usia</th>
+                                            <th>Gol. Darah</th>
                                             <th>Berat Badan</th>
-                                            <th>Tinggi Badan</th>
-                                            <th>Deteksi</th>
-                                            <th>Imunisasi</th>
-                                            <th>Vit. A</th>
-                                            <th>Keterangan</th>
+                                            <th>Tensi</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         <?php $i = 1; ?>
-                                        <?php foreach ($laporan as $d) { ?>
+                                        <?php foreach ($lansia as $d) { ?>
                                             <tr>
                                                 <td><?= $i ?></td>
-                                                <td><?= $d->nama_anak ?></td>
-                                                <td><?php echo date_format(date_create($d->tgl_skrng), "j F Y"); ?></td>
-                                                <td><?php echo $d->usia; ?> bulan</td>
+                                                <td><?= $d->nama ?></td>
+                                                <td><?php echo date_format(date_create($d->tgl_pemeriksaan), "j F Y"); ?></td>
+                                                <td><?php echo $d->gol_darah; ?> bulan</td>
                                                 <td><?php echo $d->bb; ?> kg</td>
-                                                <td><?php echo $d->tb; ?> cm</td>
-                                                <td><?php echo $d->deteksi; ?></td>
-                                                <td><?php echo $d->imunisasi; ?></td>
-                                                <td><?php echo $d->vit_a; ?></td>
-                                                <td><?php echo $d->ket; ?></td>
+                                                <td><?php echo $d->tensi; ?></td>
                                             </tr>
                                         <?php $i++ ?>    
                                         <?php } ?>

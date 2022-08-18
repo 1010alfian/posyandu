@@ -7,6 +7,7 @@ class Lansia extends CI_Controller
     {
         parent::__construct();
         $this->load->model('lansia_model');
+        $this->load->model('Laporan_model');
     }
 
     public function index()
@@ -95,7 +96,7 @@ class Lansia extends CI_Controller
         $this->load->view('templates/footer-datatables');
     }
 
-     public function addlayanan()
+    public function addlayanan()
     {
         $data = [
             'id_lansia' => $this->input->post('id_lansia'),
@@ -109,5 +110,20 @@ class Lansia extends CI_Controller
         $this->db->insert('layanan_lansia', $data);
         $this->session->set_flashdata('msg', 'Berhasil Ditambahkan');
         redirect('lansia/pemeriksaanlansia');
+    }
+
+
+    // Laporan Lansia
+    public function laporan()
+    {
+        $data['title'] = 'Laporan Lansia | Posyandu Kencana';
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+        $data['lansia'] = $this->Laporan_model->getlansia();
+
+        $this->load->view('templates/header-datatables', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('lansia/laporan', $data);
+        $this->load->view('templates/footer-datatables');
     }
 }

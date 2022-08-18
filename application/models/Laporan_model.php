@@ -14,6 +14,33 @@ class Laporan_model extends CI_Model
     }
     // SELESAI GET DATA ANAK IBU
 
+    function getlansia(){
+        $this->db->select('*')
+            ->from('lansia h')
+            ->join('layanan_lansia q', 'q.id_lansia = h.id_lansia');
+
+        // var_dump($res->result());
+        // die;
+
+        $res = $this->db->get();
+        // echo $this->db->last_query();
+        return $res->result();
+    }
+
+    function getanak(){
+        $this->db->select('*')
+            ->from('penimbangan h')
+            ->join('imunisasi q', 'q.anak_id = h.anak_id')
+            ->join('anak i', 'i.id_anak = h.anak_id');
+
+        // var_dump($res->result());
+        // die;
+
+        $res = $this->db->get();
+        // echo $this->db->last_query();
+        return $res->result();
+    }
+
     // MULAI GET DATA UTK CETAK LAPORAN
     function get($where = array())
     {

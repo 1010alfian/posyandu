@@ -16,6 +16,7 @@ class Laporan_Anak extends CI_Controller
         $data['title'] = 'Laporan Anak | Posyandu Kencana';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['d_anak'] = $this->Laporan_model->getDataAnakIbu();
+        $data['laporan'] = $this->Laporan_model->getanak();
 
         $this->load->view('templates/header-datatables', $data);
         $this->load->view('templates/sidebar');

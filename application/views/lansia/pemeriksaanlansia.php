@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="divider-dashed"></div>
-                        <h2>Pertumbuhan</h2>
+                        <h2>Pemeriksaan</h2>
                         <div class="divider-dashed"></div>
 
                         <div class="form-group row">
@@ -61,7 +61,14 @@
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="gol_darah">Golongan Darah
                             </label>
                             <div class="col-md-6 col-sm-6">
-                                <input type=text step=any id="gol_darah" name="gol_darah" class="form-control">
+                                <select name="gol_darah" class="form-control" id="">
+                                    <option value="" selected>Pilih Gol. Darah</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="AB">AB</option>
+                                    <option value="O">O</option>
+                                    <option value="Tidak Tahu">Tidak Tahu</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">

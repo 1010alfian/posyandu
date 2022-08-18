@@ -56,6 +56,22 @@
 		// $("#imun").prop("disabled", true);
 		// $("#keterangan").prop("disabled", true);
 
+		$('.btnSelectIbuHamil').click(function() {
+			var id = $(this).data('id');
+			var nama = $(this).data('nama');
+			var tgl_lahir = $(this).data('tgl_lahir');
+			var suami = $(this).data('suami');
+			var alamat = $(this).data('alamat');
+
+			$('#id').val(id);
+			$('#nama').val(nama);
+			$('#tgl_lahir').val(tgl_lahir);
+			$('#suami').val(suami);
+			$('#alamat').val(alamat);
+
+			$('#DataLansiaModal').modal('toggle');
+		});
+
 		$('.btnSelectLansia').click(function() {
 			var id = $(this).data('id');
 			var nama = $(this).data('nama');
@@ -160,6 +176,15 @@
 		// });
 
 		//    KUMPULAN FUNCTION
+		function getIbu() {
+			$("#nama").focus();
+
+			$("#nama").prop("disabled", false);
+			$("#tgl_lahir").prop("disabled", false);
+			$("#suami").prop("disabled", false);
+			$("#alamat").prop("disabled", false);
+		}
+
 		function getLansia() {
 			$("#tgl_lahir").focus();
 

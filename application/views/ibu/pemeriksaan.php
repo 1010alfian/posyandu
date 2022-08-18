@@ -29,29 +29,77 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align">Usia</label>
+                            <label class="col-form-label col-md-3 col-sm-3 label-align">Tempat & Tanggal Lahir</label>
                             <div class="col-md-6 col-sm-6">
                                 <div class="input-group">
-                                    <input type="text" name="usia" id="usia" class="form-control">
+                                    <input type="text" name="tgl_lahir" id="tgl_lahir" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Berat Badan
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Nama Suami
                             </label>
                             <div class="col-md-6 col-sm-6">
                                 <div class="input-group">
-                                    <input type="text" name="bb" id="bb" class="form-control" >
+                                    <input type="text" name="suami" id="suami" class="form-control" >
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Tensi
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Alamat
                             </label>
                             <div class="col-md-6 col-sm-6">
                                 <div class="input-group">
-                                    <input type="text" name="tensi" id="tensi" class="form-control" >
+                                    <input type="text" name="alamat" id="alamat" class="form-control" >
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="divider-dashed"></div>
+                        <h2>Pemeriksaan</h2>
+                        <div class="divider-dashed"></div>
+
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="tgl_pemeriksaan">Tanggal Pemeriksaan
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <input type=date step=any id="tgl_pemeriksaan" name="tgl_pemeriksaan" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="gol_darah">Golongan Darah
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <select name="gol_darah" class="form-control" id="">
+                                    <option value="" selected>Pilih Gol. Darah</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="AB">AB</option>
+                                    <option value="O">O</option>
+                                    <option value="Tidak Tahu">Tidak Tahu</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="bb">Berat Badan
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <input type=number step=any id="bb" name="bb" class="form-control">
+                            </div>
+                            <label for="">Kg</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="tensi">Tensi
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <input type=number step=any id="tensi" name="tensi" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="lingkar_perut">Lingkar Perut
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <input type=number step=any id="lingkar_perut" name="lingkar_perut" class="form-control">
                             </div>
                         </div>
 
@@ -78,21 +126,21 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama</th>
-                                                <th>Usia</th>
-                                                <th>Berat Badan</th>
-                                                <th>Tensi</th>
+                                                <th>Tempat & Tanggal Lahir</th>
+                                                <th>Nama Suami</th>
+                                                <th>Alamat</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php foreach ($ibu as $d) : ?>
                                                 <tr>
-                                                    <td><?= $d['nama']; ?></td>
+                                                    <td><?= $d['nama_ibu']; ?></td>
+                                                    <td><?= $d['tempat_lahir']; ?>, <?= $d['tgl_lahir']; ?></td>
                                                     <td><?= $d['nama_suami']; ?></td>
-                                                    <td><?= $d['hpht']; ?></td>
                                                     <td><?= $d['alamat']; ?></td>
                                                     <td>
-                                                        <button id="pilihLansia" type="button" data-id="<?= $d['id_lansia']; ?>" data-nama="<?= $d['nama']; ?>" data-usia="<?= $d['usia']; ?>" data-bb="<?= $d['bb']; ?>" data-tensi="<?= $d['tensi']; ?>" class="btnSelectLansia btn btn-primary btn-sm">Pilih</button>
+                                                        <button id="pilihIbuHamil" type="button" data-id="<?= $d['id_ibu']; ?>" data-nama="<?= $d['nama_ibu']; ?>" data-tgl_lahir="<?= $d['tempat_lahir']; ?>, <?= $d['tgl_lahir']; ?>" data-suami="<?= $d['nama_suami']; ?>" data-alamat="<?= $d['alamat']; ?>" class="btnSelectIbuHamil btn btn-primary btn-sm">Pilih</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>

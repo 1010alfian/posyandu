@@ -4,7 +4,7 @@
             <h3>Pemeriksaan Ibu Hamil</h3>
         </div>
     </div>
-    <div class="flash-datar" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>
+    <div class="flash-dataibu" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>
     <?php if ($this->session->flashdata('msg')) : ?>
 
     <?php endif; ?>
@@ -14,13 +14,13 @@
             <div class="x_panel">
                 <div class="x_content">
                     <br />
-                    <form id="imunisasi-form" name="imunisasi-form" class="form-horizontal form-label-left" action="<?php echo base_url('lansia/update'); ?>" method="POST" enctype="multipart/form-data">
+                    <form id="imunisasi-form" name="imunisasi-form" class="form-horizontal form-label-left" action="<?php echo base_url('ibu/addlayanan'); ?>" method="POST" enctype="multipart/form-data">
                         <div class="form-group row">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="username">Nama
                             </label>
                             <div class="col-md-6 col-sm-6">
                                 <div class="input-group">
-                                    <input type="hidden" name="id_lansia" id="id_lansia" class="form-control" >
+                                    <input type="hidden" name="id" id="id" class="form-control" >
                                     <input type="text" name="nama" id="nama" class="form-control" readonly>
                                     <span class="input-group-btn">
                                         <button id="pilihData" name="pilihData" type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#DataLansiaModal">Pilih</button>
@@ -78,20 +78,6 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="gol_darah">Golongan Darah
-                            </label>
-                            <div class="col-md-6 col-sm-6">
-                                <select name="gol_darah" class="form-control" id="">
-                                    <option value="" selected>Pilih Gol. Darah</option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="AB">AB</option>
-                                    <option value="O">O</option>
-                                    <option value="Tidak Tahu">Tidak Tahu</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="bb">Berat Badan
                             </label>
                             <div class="col-md-6 col-sm-6">
@@ -112,6 +98,7 @@
                             <div class="col-md-6 col-sm-6">
                                 <input type=number step=any id="lingkar_perut" name="lingkar_perut" class="form-control">
                             </div>
+                            <label for="">cm</label>
                         </div>
 
                         <div class="ln_solid"></div>

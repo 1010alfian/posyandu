@@ -6,12 +6,12 @@ class Ibu_model extends CI_Model {
     // MULAI CRUD DATA IBU
     public function getDataIbu(){
         $this->db->select();
-        $this->db->from('ibu as a');
-        $this->db->join('layanan_ibu_hamil as b', 'a.id_ibu = b.ibu_id', 'left');        
+        $this->db->from('ibu as a');     
         $query = $this->db->get();
         
         return $query->result_array();
     }
+
 
     public function delDataIbu($id){
         $this->db->where('id_ibu', $id);

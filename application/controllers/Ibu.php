@@ -103,11 +103,11 @@ class Ibu extends CI_Controller
         $this->load->view('templates/footer-datatables');
     }
 
-    public function add(){
+    public function addlayanan(){
         $data = [
-            'ibu_id' => $this->input->post('ibu_id'),
+            'ibu_id' => $this->input->post('id'),
             'tgl_pemeriksaan' => $this->input->post('tgl_pemeriksaan'),
-            'usia_kandungan' => $this->input->post('usia_kandungan'),
+            'usia_kandungan' => $this->input->post('hpht'),
             'bb' => $this->input->post('bb'),
             'tensi' => $this->input->post('tensi'),
             'lingkar_perut' => $this->input->post('lingkar_perut')
@@ -115,25 +115,6 @@ class Ibu extends CI_Controller
 
         $this->db->insert('layanan_ibu_hamil', $data);
         $this->session->set_flashdata('msg', 'Berhasil Ditambahkan');
-
-        redirect('ibu/pemeriksaanibuhamil');
-    }
-
-    public function edit()
-    {
-        $data = [
-            'tgl_pemeriksaan' => $this->input->post('tgl_pemeriksaan'),
-            'usia_kandungan' => $this->input->post('usia_kandungan'),
-            'bb' => $this->input->post('bb'),
-            'tensi' => $this->input->post('tensi'),
-            'lingkar_perut' => $this->input->post('lingkar_perut')
-        ];
-        $where = [
-            'id_tensi_ibu' => $this->input->post('id_tensi_ibu')
-        ];
-        $this->db->where($where);
-        $this->db->update('tensi_ibu', $data);
-        $this->session->set_flashdata('msg', 'Berhasil Diubah');
 
         redirect('ibu/pemeriksaanibuhamil');
     }

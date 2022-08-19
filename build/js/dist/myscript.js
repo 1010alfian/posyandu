@@ -4,6 +4,12 @@ const flash = $(".flash-data").data("flashdata");
 if (flash) {
 	Swal.fire("Profile", flash, "success");
 }
+// Layanan Ibu Hamil
+const flashibu = $(".flash-dataibu").data("flashdata");
+
+if (flashibu) {
+	Swal.fire("Pemeriksaan Ibu Hamil", flashibu, "success");
+}
 
 // msg layanan lansia
 const flashb = $(".flash-datab").data("flashdata");

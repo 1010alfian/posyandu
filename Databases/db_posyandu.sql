@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2022 at 11:56 PM
+-- Generation Time: Aug 19, 2022 at 03:01 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -89,9 +89,7 @@ CREATE TABLE `ibu` (
 --
 
 INSERT INTO `ibu` (`id_ibu`, `nama_ibu`, `tempat_lahir`, `tgl_lahir`, `nama_suami`, `alamat`, `no_tlp`, `hpht`) VALUES
-(2, 'Linda', 'Subang', '1987-09-20', 'Waluyu Santoso', 'Subang', '6767-7656-756', '2022-08-09'),
-(3, 'dsf', 'subang', '2022-08-11', 'ad', 'snd', '0989-8997-787', '2022-08-02'),
-(4, 'gvfg', 'sbg', '2022-08-17', 'hjhj', 'gh', '8789-7878-979', '2022-08-17');
+(2, 'Linda', 'Subang', '1987-09-20', 'Waluyu Santoso', 'Subang', '6767-7656-756', '2022-08-09');
 
 -- --------------------------------------------------------
 
@@ -121,7 +119,9 @@ INSERT INTO `imunisasi` (`id_imunisasi`, `anak_id`, `tgl_lahir`, `jenis_kelamin`
 (1, 1, '2012-06-06', 'Perempuan', 2, '2019-02-12', 84, 'flu', 'Merah', '', 0),
 (3, 1, '2012-06-06', 'Perempuan', 2, '2021-02-12', 108, 'flu', 'Merah', '', 0),
 (4, 2, '2022-01-19', 'Perempuan', 0, '2022-08-11', 6, 'sdg', 'Merah', 'hg', 1),
-(5, 2, '2022-01-19', 'Perempuan', 0, '2022-08-17', 6, 'fs', 'Merah', 'we', 1);
+(5, 2, '2022-01-19', 'Perempuan', 0, '2022-08-17', 6, 'fs', 'Merah', 'we', 1),
+(6, 4, '2021-10-10', 'Laki-Laki', 0, '2022-08-18', 1, 'sdg', 'Merah', 'asd', 1),
+(7, 2, '2022-01-19', 'Perempuan', 0, '2022-08-17', 6, 'sdg', 'Merah', 'sdfsdf', 1);
 
 -- --------------------------------------------------------
 
@@ -137,14 +137,6 @@ CREATE TABLE `lansia` (
   `alamat` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `lansia`
---
-
-INSERT INTO `lansia` (`id_lansia`, `nama`, `tempat_lahir`, `tgl_lahir`, `alamat`) VALUES
-(12, 'dsdf', 'Subang', '2022-08-17', 'subang'),
-(13, 'ASD', 'Bandung', '2021-11-18', 'Bandung');
-
 -- --------------------------------------------------------
 
 --
@@ -152,7 +144,7 @@ INSERT INTO `lansia` (`id_lansia`, `nama`, `tempat_lahir`, `tgl_lahir`, `alamat`
 --
 
 CREATE TABLE `layanan_ibu_hamil` (
-  `id_tensi_ibu` int(11) NOT NULL,
+  `id_layanan_ibu` int(11) NOT NULL,
   `ibu_id` int(11) NOT NULL,
   `usia_kandungan` varchar(200) NOT NULL,
   `bb` varchar(200) NOT NULL,
@@ -160,13 +152,6 @@ CREATE TABLE `layanan_ibu_hamil` (
   `tgl_pemeriksaan` date NOT NULL,
   `tensi` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `layanan_ibu_hamil`
---
-
-INSERT INTO `layanan_ibu_hamil` (`id_tensi_ibu`, `ibu_id`, `usia_kandungan`, `bb`, `lingkar_perut`, `tgl_pemeriksaan`, `tensi`) VALUES
-(1, 3, '', '', '', '0000-00-00', 110);
 
 -- --------------------------------------------------------
 
@@ -183,14 +168,6 @@ CREATE TABLE `layanan_lansia` (
   `tensi` varchar(200) NOT NULL,
   `bingkisan` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `layanan_lansia`
---
-
-INSERT INTO `layanan_lansia` (`id_layanan_lansia`, `id_lansia`, `tgl_pemeriksaan`, `gol_darah`, `bb`, `tensi`, `bingkisan`) VALUES
-(1, 13, '2022-08-10', 'B', '60', '110', '1'),
-(2, 12, '2022-08-17', 'A', '62', '110', '2');
 
 -- --------------------------------------------------------
 
@@ -256,7 +233,13 @@ INSERT INTO `login_attempts` (`user_id`, `date_time`) VALUES
 (1, '2022-08-16 05:54:02'),
 (1, '2022-08-16 06:44:39'),
 (1, '2022-08-18 12:46:50'),
-(1, '2022-08-18 03:03:20');
+(1, '2022-08-18 03:03:20'),
+(1, '2022-08-18 05:00:19'),
+(1, '2022-08-18 06:41:36'),
+(1, '2022-08-18 09:50:56'),
+(1, '2022-08-18 09:55:55'),
+(1, '2022-08-19 01:57:50'),
+(1, '2022-08-19 07:53:19');
 
 -- --------------------------------------------------------
 
@@ -286,7 +269,9 @@ CREATE TABLE `penimbangan` (
 INSERT INTO `penimbangan` (`id_penimbangan`, `anak_id`, `tgl_lahir`, `jenis_kelamin`, `tgl_skrng`, `usia`, `bb`, `tb`, `lk`, `deteksi`, `ket`, `created_by`) VALUES
 (6, 3, '2022-08-26', 'Laki-Laki', '2022-08-10', 3, 5, 65, 8, 'Sesuai', 'sef', 1),
 (7, 2, '2022-01-19', 'Perempuan', '2022-08-10', 3, 19, 80, 11, 'Sesuai', 'sa', 1),
-(8, 2, '2022-01-19', 'Perempuan', '2022-08-17', 6, 14, 70, 20, 'Sesuai', 'jshfkjh', 1);
+(8, 2, '2022-01-19', 'Perempuan', '2022-08-17', 6, 14, 70, 20, 'Sesuai', 'jshfkjh', 1),
+(9, 4, '2021-10-10', 'Laki-Laki', '2022-08-17', 1, 10, 40, 15, 'Sesuai', 'asd', 1),
+(10, 2, '2022-01-19', 'Perempuan', '2022-08-16', 6, 12, 40, 14, 'Sesuai', 'dgfdg', 1);
 
 -- --------------------------------------------------------
 
@@ -398,8 +383,8 @@ ALTER TABLE `lansia`
 -- Indexes for table `layanan_ibu_hamil`
 --
 ALTER TABLE `layanan_ibu_hamil`
-  ADD PRIMARY KEY (`id_tensi_ibu`),
-  ADD KEY `ibu_id` (`ibu_id`);
+  ADD PRIMARY KEY (`id_layanan_ibu`),
+  ADD KEY `layanan_ibu_hamil_ibfk_1` (`ibu_id`);
 
 --
 -- Indexes for table `layanan_lansia`
@@ -441,7 +426,7 @@ ALTER TABLE `users_level`
 -- AUTO_INCREMENT for table `anak`
 --
 ALTER TABLE `anak`
-  MODIFY `id_anak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_anak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `bidan`
@@ -453,37 +438,37 @@ ALTER TABLE `bidan`
 -- AUTO_INCREMENT for table `ibu`
 --
 ALTER TABLE `ibu`
-  MODIFY `id_ibu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_ibu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `imunisasi`
 --
 ALTER TABLE `imunisasi`
-  MODIFY `id_imunisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_imunisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `lansia`
 --
 ALTER TABLE `lansia`
-  MODIFY `id_lansia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_lansia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `layanan_ibu_hamil`
 --
 ALTER TABLE `layanan_ibu_hamil`
-  MODIFY `id_tensi_ibu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_layanan_ibu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `layanan_lansia`
 --
 ALTER TABLE `layanan_lansia`
-  MODIFY `id_layanan_lansia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_layanan_lansia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `penimbangan`
 --
 ALTER TABLE `penimbangan`
-  MODIFY `id_penimbangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_penimbangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `petugas`
@@ -502,16 +487,6 @@ ALTER TABLE `user`
 --
 ALTER TABLE `users_level`
   MODIFY `id_level` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `layanan_ibu_hamil`
---
-ALTER TABLE `layanan_ibu_hamil`
-  ADD CONSTRAINT `layanan_ibu_hamil_ibfk_1` FOREIGN KEY (`ibu_id`) REFERENCES `ibu` (`id_ibu`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

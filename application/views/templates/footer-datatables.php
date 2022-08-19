@@ -62,12 +62,14 @@
 			var tgl_lahir = $(this).data('tgl_lahir');
 			var suami = $(this).data('suami');
 			var alamat = $(this).data('alamat');
+			var hpht = $(this).data('hpht');
 
 			$('#id').val(id);
 			$('#nama').val(nama);
 			$('#tgl_lahir').val(tgl_lahir);
 			$('#suami').val(suami);
 			$('#alamat').val(alamat);
+			$('#hpht').val(hpht);
 
 			$('#DataLansiaModal').modal('toggle');
 		});
@@ -183,6 +185,7 @@
 			$("#tgl_lahir").prop("disabled", false);
 			$("#suami").prop("disabled", false);
 			$("#alamat").prop("disabled", false);
+			$("#hpht").prop("disabled", false);
 		}
 
 		function getLansia() {

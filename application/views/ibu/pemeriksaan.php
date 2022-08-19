@@ -54,10 +54,21 @@
                                 </div>
                             </div>
                         </div>
+                        
 
                         <div class="divider-dashed"></div>
                         <h2>Pemeriksaan</h2>
                         <div class="divider-dashed"></div>
+
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Usia Kandungan
+                            </label>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="input-group">
+                                    <input type="text" name="hpht" id="hpht" class="form-control" >
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="tgl_pemeriksaan">Tanggal Pemeriksaan
@@ -129,6 +140,7 @@
                                                 <th>Tempat & Tanggal Lahir</th>
                                                 <th>Nama Suami</th>
                                                 <th>Alamat</th>
+                                                <th>HPHT</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -139,8 +151,18 @@
                                                     <td><?= $d['tempat_lahir']; ?>, <?= $d['tgl_lahir']; ?></td>
                                                     <td><?= $d['nama_suami']; ?></td>
                                                     <td><?= $d['alamat']; ?></td>
+                                                    <td><?= $d['hpht']; ?></td>
+                                                    <?php
+                                                    $hpht =  date("Y-m-d", strtotime($d['hpht']));
+                                                    $date = new DateTime($hpht);
+                                                    $now = new DateTime();
+
+                                                    $interval = $date->diff($now)->format("%d hari, %m bulan");;
+                                                    ?>
+
+                                                    
                                                     <td>
-                                                        <button id="pilihIbuHamil" type="button" data-id="<?= $d['id_ibu']; ?>" data-nama="<?= $d['nama_ibu']; ?>" data-tgl_lahir="<?= $d['tempat_lahir']; ?>, <?= $d['tgl_lahir']; ?>" data-suami="<?= $d['nama_suami']; ?>" data-alamat="<?= $d['alamat']; ?>" class="btnSelectIbuHamil btn btn-primary btn-sm">Pilih</button>
+                                                        <button id="pilihIbuHamil" type="button" data-id="<?= $d['id_ibu']; ?>" data-nama="<?= $d['nama_ibu']; ?>" data-tgl_lahir="<?= $d['tempat_lahir']; ?>, <?= $d['tgl_lahir']; ?>" data-hpht="<?= $interval; ?>" data-suami="<?= $d['nama_suami']; ?>" data-alamat="<?= $d['alamat']; ?>" class="btnSelectIbuHamil btn btn-primary btn-sm">Pilih</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>

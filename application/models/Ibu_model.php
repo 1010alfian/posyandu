@@ -28,4 +28,14 @@ class Ibu_model extends CI_Model {
         $this->db->update('tensi_ibu', $data);
     }
     // SELESAI CRUD DATA IBU
+    // get for laporan
+    public function getIbuLaporan(){
+        $this->db->select('*');
+        $this->db->from('ibu as a');
+        $this->db->join('layanan_ibu_hamil as b', 'a.id_ibu = b.ibu_id');
+             
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
 }

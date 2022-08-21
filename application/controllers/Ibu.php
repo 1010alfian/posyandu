@@ -118,4 +118,19 @@ class Ibu extends CI_Controller
 
         redirect('ibu/pemeriksaanibuhamil');
     }
+
+    // Laporan
+    public function laporan()
+    {
+        $data['title'] = 'Laporan Ibu Hamil | Posyandu Kencana';
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
+
+        $data['ibu'] = $this->Ibu_model->getIbuLaporan();
+
+        $this->load->view('templates/header-datatables', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('ibu/laporan', $data);
+        $this->load->view('templates/footer-datatables');
+    }
 }

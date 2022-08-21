@@ -1,7 +1,7 @@
 <div class="right_col" role="main">
     <div class="page-title">
         <div class="title_left">
-            <h3>Laporan Balita</h3>
+            <h3>Laporan Ibu Hamil</h3>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -20,30 +20,26 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Tanggal Periksa</th>
-                                            <th>Usia</th>
+                                            <th>Nama</th>
+                                            <th>Usia Kandungan</th>
                                             <th>Berat Badan</th>
-                                            <th>Tinggi Badan</th>
-                                            <th>Deteksi</th>
-                                            <th>Imunisasi</th>
-                                            <th>Vit. A</th>
-                                            <th>Keterangan</th>
+                                            <th>Lingkar Perut</th>
+                                            <th>Tensi</th>
+                                            <th>Tanggal Pemeriksaan</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         <?php $i = 1 ?>
-                                        <?php foreach ($laporan as $d) { ?>
+                                        <?php foreach ($ibu as $d) { ?>
                                             <tr>
                                                 <td><?= $i++ ?></td>
-                                                <td><?php echo date_format(date_create($d->tgl_skrng), "j F Y"); ?></td>
-                                                <td><?php echo $d->usia; ?> bulan</td>
+                                                <td><?php echo $d->nama_ibu; ?></td>
+                                                <td><?php echo $d->usia_kandungan; ?></td>
                                                 <td><?php echo $d->bb; ?> kg</td>
-                                                <td><?php echo $d->tb; ?> cm</td>
-                                                <td><?php echo $d->deteksi; ?></td>
-                                                <td><?php echo $d->imunisasi; ?></td>
-                                                <td><?php echo $d->vit_a; ?></td>
-                                                <td><?php echo $d->ket; ?></td>
+                                                <td><?php echo $d->lingkar_perut; ?>cm</td>
+                                                <td><?php echo $d->tensi; ?></td>
+                                                <td><?php echo date_format(date_create($d->tgl_pemeriksaan), "j F Y"); ?></td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>

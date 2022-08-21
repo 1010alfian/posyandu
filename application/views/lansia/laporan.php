@@ -39,7 +39,7 @@
                                                 <td><?= $i ?></td>
                                                 <td><?= $d->nama ?></td>
                                                 <td><?php echo date_format(date_create($d->tgl_pemeriksaan), "j F Y"); ?></td>
-                                                <td><?php echo $d->gol_darah; ?> bulan</td>
+                                                <td><?php echo $d->gol_darah; ?></td>
                                                 <td><?php echo $d->bb; ?> kg</td>
                                                 <td><?php echo $d->tensi; ?></td>
                                             </tr>

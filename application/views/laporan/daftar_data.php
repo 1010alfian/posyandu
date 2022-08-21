@@ -20,6 +20,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Nama Balita</th>
                                             <th>Tanggal Periksa</th>
                                             <th>Usia</th>
                                             <th>Berat Badan</th>
@@ -36,6 +37,7 @@
                                         <?php foreach ($laporan as $d) { ?>
                                             <tr>
                                                 <td><?= $i++ ?></td>
+                                                <td><?php echo $d->nama_anak; ?></td>
                                                 <td><?php echo date_format(date_create($d->tgl_skrng), "j F Y"); ?></td>
                                                 <td><?php echo $d->usia; ?> bulan</td>
                                                 <td><?php echo $d->bb; ?> kg</td>

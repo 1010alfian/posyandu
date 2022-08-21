@@ -64,7 +64,7 @@ class Laporan_Anak extends CI_Controller
             $filter['i.nama_ibu'] = $idibu;
             $filter['i.tgl_lahir'] = $tgllahir;
 
-            $dt = $this->Laporan_model->get($filter);
+            $dt = $this->Laporan_model->getanak();
             $dtId = $this->Laporan_model->getId($filter);
             // var_dump($dt);
             // die;
@@ -78,38 +78,20 @@ class Laporan_Anak extends CI_Controller
             // <td width='50' align='center'><h1>Posyandu Kencana</h1></td>
             // </tr>
             // </table>");
-            $mpdf->SetFooter("Laporan Perkembangan Anak | Posyandu Kencana | {PAGENO}");
+            $mpdf->SetFooter("Laporan Balita | Posyandu Kencana | {PAGENO}");
             $mpdf->SetMargins(0, 0, 10);
 
-            $html = "<h1 align='center' style='margin-bottom:1px'>Laporan Perkembangan Anak</h1>";
+            $html = "<h1 align='center' style='margin-bottom:1px'>Laporan Balita</h1>";
 
             $html = $html . "<p align='left'><b>Tanggal Terakhir Periksa  : " . tanggal() . "</b></p>";
 
-            //MUlai Data Anak
-            $html = $html . "<h3>DATA ANAK</h3>";
-            $html = $html . "<table>";
-            foreach ($dtId as $i) {
-                $html = $html . "<tr>";
-                $html = $html . "<td style='width:150px'>NIK</td><td>:</td><td>" . $i->nik_anak . "</td>";
-                $html = $html . "</tr>";
-                $html = $html . "<tr>";
-                $html = $html . "<td style='width:150px'>Nama Anak</td><td>:</td><td>" . $i->nama_anak . "</td>";
-                $html = $html . "</tr>";
-                $html = $html . "<tr>";
-                $html = $html . "<td style='width:150px'>Tanggal Lahir</td><td>:</td><td>" . date_format(date_create($i->tgl_lahir), "j F Y") . "</td>";
-                $html = $html . "</tr>";
-                $html = $html . "<tr>";
-                $html = $html . "<td style='width:150px'>Nama Ibu</td><td>:</td><td>" . $i->nama_ibu . "</td>";
-                $html = $html . "</tr>";
-            }
-            $html = $html . "</table>";
-            //Selesai Data Anak
 
             $html = $html . "<br>";
             $html = $html . "<h3>REKAP DATA PENIMBANGAN DAN IMUNISASI ANAK</h3>";
             $html = $html . "<table border='1' cellspacing='0' cellpading='0' >";
             $html = $html . "<thead>";
             $html = $html . "<tr>";
+            $html = $html . "<th>Nama</th>";
             $html = $html . "<th>Tanggal Periksa</th>";
             $html = $html . "<th>Usia</th>";
             $html = $html . "<th>Berat Badan</th>";
@@ -123,7 +105,7 @@ class Laporan_Anak extends CI_Controller
             $html = $html . "<tbody>";
             foreach ($dt as $rows) {
                 $html = $html . "<tr>";
-                $html = $html . "<td align='center'>" . date_format(date_create($rows->tgl_skrng), "j F Y") . "</td><td align='center'>" . $rows->usia . ' bulan' . "</td><td align='center'>" . $rows->bb . ' kg' . "</td><td align='center'>" . $rows->tb . ' cm' . "</td><td align='center'>" . $rows->deteksi . "</td><td align='center'>" . $rows->imunisasi . "</td><td align='center'>" . $rows->vit_a . "</td><td align='center'>" . $rows->ket . "</td>";
+                $html = $html . "</td><td align='center'>" . $rows->nama_anak ."</td><td align='center'>" . date_format(date_create($rows->tgl_skrng), "j F Y") . "</td><td align='center'>" . $rows->usia . ' bulan' . "</td><td align='center'>" . $rows->bb . ' kg' . "</td><td align='center'>" . $rows->tb . ' cm' . "</td><td align='center'>" . $rows->deteksi . "</td><td align='center'>" . $rows->imunisasi . "</td><td align='center'>" . $rows->vit_a . "</td><td align='center'>" . $rows->ket . "</td>";
                 $html = $html . "</tr>";
             }
             $html = $html . "</tbody>";
